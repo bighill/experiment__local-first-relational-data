@@ -7,6 +7,8 @@ import TagTidy from './components/TagTidy'
 import ThingList from './components/ThingList'
 import ThingNew from './components/ThingNew'
 
+// TODO cypress tests
+
 function App() {
   // TODO arrange the blocks responsively
 
