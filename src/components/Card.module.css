@@ -1,0 +1,15 @@
+.card {
+  border: 1px solid var(--color-fg);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  min-width: 400px;
+}
+
+.title {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-fg);
+}
+
+.content {
+  padding: 1rem;
+}
