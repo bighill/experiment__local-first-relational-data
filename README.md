@@ -1,6 +1,6 @@
 # Local-first relational data
 
-The experiment has the narrow focus of handling many-to-many relationships using IndexedDB.
+This experiment has the narrow focus of handling many-to-many relationships using IndexedDB.
 
 - A `Thing` is an object with a title and content
 - A `Tag` is an object with a title

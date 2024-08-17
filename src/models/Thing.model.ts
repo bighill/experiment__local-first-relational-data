@@ -26,7 +26,10 @@ export const updateThing = async (
     content: content.trim(),
   })
 
+  // TODO refactor this op in new fn
+
   // Find tags in content
+  // TODO find tags in title as well
   const tokens = content.split(/[ \r\n]+/)
   const foundTags = tokens.filter((token) => _isTag(token))
   const newTagTitlesForThing = foundTags.map((t) =>

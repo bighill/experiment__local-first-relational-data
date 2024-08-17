@@ -8,6 +8,8 @@ import ThingList from './components/ThingList'
 import ThingNew from './components/ThingNew'
 
 function App() {
+  // TODO arrange the blocks responsively
+
   return (
     <main>
       <Card title="Things">
