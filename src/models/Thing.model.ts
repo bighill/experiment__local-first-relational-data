@@ -3,6 +3,9 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { dexie, Tag, Thing } from '../lib/dexie'
 
+/**
+ * Create thing
+ */
 export const createThing = async (title: string): Promise<Thing> => {
   const thing: Thing = {
     id: uuidv4(),
@@ -13,24 +16,24 @@ export const createThing = async (title: string): Promise<Thing> => {
   return thing
 }
 
+/**
+ * Determine if string is tag
+ * ...helper
+ */
 const _isTag = (token: string) =>
   token.startsWith('#') && !token.startsWith('# ') && !token.startsWith('##')
 
-export const updateThing = async (
+/**
+ * Process tags based on new title/content
+ * ...helper
+ */
+const _processTagsForThing = async (
   id: string,
   title: string,
   content: string
-): Promise<void> => {
-  await dexie.things.update(id, {
-    title: title.trim(),
-    content: content.trim(),
-  })
-
-  // TODO refactor this op in new fn
-
-  // Find tags in content
-  // TODO find tags in title as well
-  const tokens = content.split(/[ \r\n]+/)
+) => {
+  // Find tags in title, content
+  const tokens = [...title.split(/[ \r\n]+/), ...content.split(/[ \r\n]+/)]
   const foundTags = tokens.filter((token) => _isTag(token))
   const newTagTitlesForThing = foundTags.map((t) =>
     t.replace(/[^a-zA-Z0-9]/g, '')
@@ -78,17 +81,43 @@ export const updateThing = async (
   }
 }
 
+/**
+ * Update thing
+ */
+export const updateThing = async (
+  id: string,
+  title: string,
+  content: string
+): Promise<void> => {
+  await dexie.things.update(id, {
+    title: title.trim(),
+    content: content.trim(),
+  })
+
+  _processTagsForThing(id, title, content)
+}
+
+/**
+ * Delete thing
+ */
 export const deleteThing = async (id: string): Promise<void> => {
   await dexie.things.delete(id)
   await dexie.links.where('thingId').equals(id).delete()
 }
 
+/**
+ * Get tags by thing ID
+ * ...helper
+ */
 const _getTagsByThingId = async (thingId: string): Promise<Tag[]> => {
   const links = await dexie.links.where('thingId').equals(thingId).toArray()
   const tagIds = links.map((link) => link.tagId)
   return await dexie.tags.where('id').anyOf(tagIds).toArray()
 }
 
+/**
+ * Live listener for things
+ */
 export const liveThings = (): Thing[] => {
   const things = useLiveQuery<Thing[]>(async () => {
     const thingArr = await dexie.things.toArray()

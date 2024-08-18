@@ -13,8 +13,12 @@ function ThingList() {
             <small data-cy-label="thing-id">{thing.id}</small>
           </div>
           {thing.tags?.map((tag) => (
-            <small key={tag.id} data-cy-label="thing-tag">
-              #{tag.title}&nbsp;
+            <small
+              key={tag.id}
+              style={{ marginRight: '1em' }}
+              data-cy-label="thing-tag"
+            >
+              #{tag.title}
             </small>
           ))}
           <ThingEdit thing={thing} />
