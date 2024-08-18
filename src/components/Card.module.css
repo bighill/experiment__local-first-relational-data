@@ -1,10 +1,7 @@
-/* TODO tweak padding, layout, readability */
-
 .card {
   border: 1px solid var(--color-fg);
   border-radius: var(--border-radius);
-  margin: 2rem 0;
-  min-width: 300px;
+  margin: 2rem;
 }
 
 .title {
@@ -13,5 +10,5 @@
 }
 
 .content {
-  padding: 1rem;
+  padding: 2rem;
 }

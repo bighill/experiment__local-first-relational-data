@@ -10,7 +10,9 @@ function LinkList() {
         <li key={link.id}>
           <small>{link.thingId}</small>
           <br />
-          <small style={{ marginLeft: '1rem' }}>{link.tagId} </small>
+          <small>
+            {'-->'} {link.tagId}{' '}
+          </small>
         </li>
       ))}
     </ul>

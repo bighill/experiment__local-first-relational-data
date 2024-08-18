@@ -3,6 +3,7 @@
   --color-fg: #649e9b;
   --color-ac: #ffffff;
   --border-radius: 6px;
+  --input-gap: 3px;
 }
 
 *,
@@ -36,8 +37,7 @@ textarea {
 
 #root {
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
+  flex-wrap: wrap;
 }
 
 h2 {
@@ -46,7 +46,7 @@ h2 {
 
 li {
   list-style-type: none;
-  margin: 1rem 0;
+  margin: 2rem 0 0 0;
 }
 
 form {
@@ -60,13 +60,19 @@ textarea {
   background: var(--color-bg);
   border: 1px solid var(--color-fg);
   padding: 0.3rem 1rem;
+  margin: 0 var(--input-gap) var(--input-gap) 0;
   outline: none;
 }
 
-/* TODO more contrast between button and not button */
+button,
+input[type='submit'] {
+  color: var(--color-bg);
+  background: var(--color-fg);
+  cursor: pointer;
+}
 
 textarea {
-  width: 100%;
+  width: calc(100% - var(--input-gap));
 }
 
 small {

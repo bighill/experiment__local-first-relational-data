@@ -9,7 +9,11 @@ function TagList() {
     <ul>
       {tags.map((tag) => (
         <li key={tag.id}>
-          {tag.title} <small>{tag.id}</small>
+          <div>{tag.title}</div>
+          <div>
+            {' '}
+            <small>{tag.id}</small>
+          </div>
           <TagEdit tag={tag} />
           {tag.things?.map((thing) => (
             <div key={thing.id} style={{ marginLeft: '1rem' }}>

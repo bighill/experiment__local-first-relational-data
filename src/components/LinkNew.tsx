@@ -29,7 +29,7 @@ function LinkNew() {
           onChange={(ev) => setTagId(ev.target.value)}
         />
       </div>
-      <input type="submit" value="Add" />
+      <input type="submit" value="Link" />
     </form>
   )
 }
