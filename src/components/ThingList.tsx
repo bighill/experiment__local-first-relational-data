@@ -8,10 +8,12 @@ function ThingList() {
     <ul>
       {things.map((thing) => (
         <li key={thing.id}>
-          {thing.title} <small>{thing.id}</small>
+          <span data-cy-label="thing-title">{thing.title}</span>
+          &nbsp;
+          <small data-cy-label="thing-id">{thing.id}</small>
           {thing.tags?.map((tag) => (
             <div key={tag.id}>
-              <small>#{tag.title}</small>
+              <small data-cy-label="thing-tag">#{tag.title}</small>
             </div>
           ))}
           <ThingEdit thing={thing} />
