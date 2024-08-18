@@ -28,13 +28,17 @@ function ThingEdit({ thing }: Props) {
           type="text"
           value={title}
           onChange={(ev) => setTitle(ev.target.value)}
+          data-cy-input="update-thing-title"
         />
-        <input type="submit" value="Update" />
-        <button onClick={handleDelete}>Delete</button>
+        <input type="submit" value="Update" data-cy-btn="update-thing" />
+        <button onClick={handleDelete} data-cy-btn="delete-thing">
+          Delete
+        </button>
       </form>
       <textarea
         value={content}
         onChange={(ev) => setContent(ev.target.value)}
+        data-cy-input="update-thing-content"
       ></textarea>
     </>
   )

@@ -17,6 +17,7 @@ function ThingNew() {
         placeholder="New Thing"
         value={title}
         onChange={(ev) => setTitle(ev.target.value)}
+        data-cy-input="new-thing"
       />
       <input type="submit" value="Add" />
     </form>

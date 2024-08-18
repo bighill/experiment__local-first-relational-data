@@ -28,7 +28,9 @@ function TagEdit({ tag }: Props) {
         onChange={(ev) => setTitle(ev.target.value)}
       />
       <input type="submit" value="Update" />
-      <button onClick={handleDelete}>Delete</button>
+      <button onClick={handleDelete} data-cy-btn="delete-tag">
+        Delete
+      </button>
     </form>
   )
 }
