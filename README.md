@@ -23,3 +23,17 @@ Add/remove tag associations based on data content.
 - No authentication
 - No user management
 - No sync or communication outside of the browser
+
+## Todo
+
+TODO better placeholder description in content textarea
+
+TODO update page title
+
+TODO tag should not be editable outside of the thing's content
+
+TODO improve clarity in UI
+
+TODO run cypress tests in Github Actions
+
+TODO display test results in readme
