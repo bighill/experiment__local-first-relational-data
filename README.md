@@ -26,9 +26,9 @@ Add/remove tag associations based on data content.
 
 ## Todo
 
-TODO better placeholder description in content textarea
-
 TODO update page title
+
+TODO better placeholder description in content textarea
 
 TODO tag should not be editable outside of the thing's content
 
