@@ -19,7 +19,7 @@ jobs:
         run: npm install
 
       - name: Start application server
-        run: npm start &
+        run: npm run dev &
         env:
           NODE_ENV: development
 
