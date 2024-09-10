@@ -26,14 +26,12 @@ Add/remove tag associations based on data content.
 
 ## Todo
 
-TODO update page title
+TODO run cypress tests in Github Actions
 
-TODO better placeholder description in content textarea
+TODO display test results in readme
+
+TODO remove the need for "Tidy" by auto cleaning up unused tags
 
 TODO tag should not be editable outside of the thing's content
 
 TODO improve clarity in UI
-
-TODO run cypress tests in Github Actions
-
-TODO display test results in readme

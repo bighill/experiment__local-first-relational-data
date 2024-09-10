@@ -37,6 +37,7 @@ function ThingEdit({ thing }: Props) {
       </form>
       <textarea
         value={content}
+        placeholder='Add any content to this textarea. Hashtags in the content will be assigned as a tag for this "thing".'
         onChange={(ev) => setContent(ev.target.value)}
         data-cy-input="update-thing-content"
       ></textarea>
